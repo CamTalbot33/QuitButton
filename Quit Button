@@ -1,0 +1,32 @@
+//Quit button - bottom corner
+
+color purple = #FF0DF4, yellow = #FEFF03, outside = purple, inside = yellow;
+
+void setup() {
+  size(600, 600); //Cue Card or 20-Images project size
+}
+
+void draw() {
+//noLoop(); //for debugging, breaks the loop
+println(mouseX);
+println(mouseY);
+
+fill(outside);
+rect(500, 550, 100, 50); //Rect in bottom right corner
+fill(inside);
+rect(500+10, 550+10, 100-10-10, 50-10-10);
+
+if (mouseX > 500+10 && mouseY > 550+10 && mouseX < 590 && mouseY < 590) {
+ inside = purple;
+ outside = yellow;
+}
+else {
+inside = yellow;
+outside = purple;
+}
+
+}
+
+//void mousePressed(){}
+
+//exit();
